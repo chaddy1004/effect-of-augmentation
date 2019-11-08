@@ -1,0 +1,26 @@
+---
+exp:
+  name: "var_01_with_aug"
+  experiment_dir: "cs480_ckpaik/"
+data:
+  img_size: 28
+  img_channels: 1
+  augmentation: True
+  test:
+    rotation:
+      apply: False
+      max_angle : 70
+    noise:
+      apply: True
+      variance: 0.1
+model:
+  structure: "VGG11"
+  lr: 0.0001
+  beta1: 0.5
+  beta2: 0.999
+trainer:
+  num_epochs: 10
+  batch_size: 64
+  test_freq: 10
+  n_gpus: 1
+  gpu_memory_fraction: 0.9
